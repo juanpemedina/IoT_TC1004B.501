@@ -8,24 +8,24 @@ Programa Python para solucion del Reto
 import pyrebase # Importando la libreria Pyrebase
 
 config = {  # Configurando la Firebase del Reto
-  "apiKey": "AIzaSyCK-ZdhsZuvWjMZfs8XviWai5zmkwJK2Pk",
-  "authDomain": "proyecto-prueba-b3ab3.firebaseapp.com",
-  "databaseURL": "https://proyecto-prueba-b3ab3-default-rtdb.firebaseio.com/",
-  "projectId": "proyecto-prueba-b3ab3",
-  "storageBucket": "proyecto-prueba-b3ab3.appspot.com",
-  "messagingSenderId": "648022558498",
-  "appId": "1:648022558498:web:3bacb2ced0b14e822dc77b",
-  "measurementId": "G-5Q0VSGPBR5"
+  "apiKey": "AIzaSyAzXLpt54jZP6Q3yUQoEYq2A-v_0vDQix8",
+  "authDomain": "si-quieres-te-la-saco.firebaseapp.com",
+  "databaseURL": "https://si-quieres-te-la-saco-default-rtdb.firebaseio.com",
+  "projectId": "si-quieres-te-la-saco",
+  "storageBucket": "si-quieres-te-la-saco.appspot.com",
+  "messagingSenderId": "1095716845856",
+  "appId": "1:1095716845856:web:8cb684d054ee5c2ddd3f45",
+  "measurementId": "G-MSZ11G7GG9"
 }
 
 firebase = pyrebase.initialize_app(config) # Inicializa la Configuracion de la Firebase
 db = firebase.database() # Accediendo la Base de Datos de la Firebase
-all_users = db.child("app_inventor").get() # Leyendo los atributos de los Elementos en sus llaves
+all_users = db.child("test").get() # Leyendo los atributos de los Elementos en sus llaves
 
 for users in all_users.each(): # Ciclo for para recorrer todos los elementos de la base de datos con llave test
   print(str(users.key()), ":", str(users.val())) # Imprime los elementos con sus respectivas llaves
   if(str(users.key()) == "digito"): # Si la llave es el Digito
     if(int(users.val()) > 9): # Si el valor en Digito es mayor a 9
-      db.child("app_inventor").update({"pwm": "elemento mayor a 9"}) # Se actualiza el elemento de usuario en la base de datos
-      print("Se modifico el valor pwm ")
+      db.child("test").update({"usuario": "elemento mayor a 9"}) # Se actualiza el elemento de usuario en la base de datos
+      print("Se modifico el valor de usuario ")
 
