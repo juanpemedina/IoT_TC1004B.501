@@ -3,7 +3,9 @@ Python Firebase Course for
 Beginners
 https://codeloop.org/python-firebase-course-for-beginners/
 Equipo 10 - IoT
-Programa Python para solucion del Reto
+Este programa se utiliza para dar solucion a una de las secciones del Reto
+Consiste en leer la base de datos, mostrar los elementos, y modificarla segun
+Una decision tomada en base al valor del Digito
 '''
 import pyrebase # Importando la libreria Pyrebase
 
